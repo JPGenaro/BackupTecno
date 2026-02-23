@@ -33,7 +33,7 @@ export default function NosotrosPage() {
             Nosotros
           </h1>
           <p className="text-xl md:text-2xl text-cyan-100 max-w-3xl animate-slide-up">
-            Innovación, confianza y excelencia en cada solución tecnológica
+            Creamos experiencias digitales excepcionales con código de excelencia
           </p>
         </div>
         
@@ -61,24 +61,24 @@ export default function NosotrosPage() {
             <div className="prose prose-lg max-w-none">
               <p className="text-slate-700 leading-relaxed mb-6 text-lg">
                 <span className="text-6xl font-bold text-cyan-600 float-left mr-4 mt-2 leading-none">B</span>
-                ackupTecno nació en 2020 con una visión clara: transformar la manera en que las empresas 
-                gestionan y protegen su información crítica. Fundada por un equipo de ingenieros apasionados 
-                por la tecnología y la innovación, nuestra empresa surgió en un momento donde la transformación 
-                digital se aceleraba exponencialmente.
+                ackupTecno nació en 2025 de la pasión de un grupo de desarrolladores por crear soluciones 
+                web innovadoras y de alta calidad. Fundada por programadores que soñaban con transformar ideas 
+                en experiencias digitales excepcionales, nuestra empresa surgió en un momento donde la presencia 
+                digital se volvía fundamental para el éxito empresarial.
               </p>
               
               <p className="text-slate-700 leading-relaxed mb-6 text-lg">
-                Desde nuestros inicios, hemos entendido que detrás de cada bit de información existe un valor 
-                incalculable: decisiones empresariales, historias personales, proyectos que transforman industrias. 
-                Esta comprensión profunda del valor de los datos nos ha impulsado a desarrollar soluciones de 
-                respaldo y recuperación que van más allá de la tecnología convencional.
+                Desde nuestros inicios, hemos entendido que cada proyecto web es único y requiere un enfoque 
+                personalizado. No solo escribimos código, creamos soluciones que impulsan negocios, conectan 
+                personas y materializan visiones. Nuestra comprensión profunda de las tecnologías modernas y 
+                las mejores prácticas de desarrollo nos permite entregar productos digitales robustos y escalables.
               </p>
               
               <p className="text-slate-700 leading-relaxed text-lg">
-                Hoy, BackupTecno es sinónimo de confiabilidad y excelencia técnica. Hemos crecido junto a 
-                nuestros clientes, evolucionando constantemente para anticiparnos a sus necesidades y superar 
-                sus expectativas. Cada desafío nos ha fortalecido, cada solución implementada nos ha inspirado 
-                a seguir innovando.
+                Hoy, BackupTecno es sinónimo de desarrollo web de excelencia. Hemos crecido junto a 
+                nuestros clientes, evolucionando con las últimas tecnologías y frameworks para anticiparnos a las 
+                tendencias del mercado. Cada proyecto nos ha fortalecido, cada línea de código nos ha inspirado 
+                a seguir mejorando nuestro craft.
               </p>
             </div>
           </div>
@@ -101,21 +101,21 @@ export default function NosotrosPage() {
               <div className="relative z-10">
                 <div className="w-16 h-16 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-6 backdrop-blur-sm group-hover:rotate-12 transition-transform duration-500 border-2 border-cyan-400/50">
                   <svg className="w-10 h-10 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 </div>
                 
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-cyan-100">Nuestra Misión</h2>
                 
                 <p className="text-cyan-50 leading-relaxed text-lg mb-4">
-                  Proporcionar soluciones tecnológicas de respaldo y recuperación de datos de clase mundial 
-                  que protejan el activo más valioso de nuestros clientes: su información.
+                  Desarrollar aplicaciones web excepcionales que transformen ideas en realidades digitales 
+                  impactantes, utilizando las tecnologías más modernas y las mejores prácticas de programación.
                 </p>
                 
                 <p className="text-cyan-50 leading-relaxed text-lg">
-                  Nos comprometemos a ofrecer servicios confiables, seguros y escalables, respaldados por 
-                  un equipo humano excepcional que entiende que detrás de cada dato hay personas, negocios 
-                  y sueños que proteger.
+                  Nos comprometemos a entregar código limpio, escalable y mantenible, respaldados por 
+                  un equipo de desarrolladores apasionados que entienden que detrás de cada sitio web hay 
+                  negocios creciendo, usuarios conectándose y sueños haciéndose realidad.
                 </p>
               </div>
             </div>
@@ -142,15 +142,15 @@ export default function NosotrosPage() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Nuestra Visión</h2>
                 
                 <p className="text-cyan-50 leading-relaxed text-lg mb-4">
-                  Ser la empresa líder en América Latina en soluciones de protección de datos, reconocida 
-                  por nuestra innovación continua, excelencia técnica y compromiso inquebrantable con el 
-                  éxito de nuestros clientes.
+                  Ser reconocidos como referentes en desarrollo web en América Latina, destacándonos 
+                  por nuestra maestría técnica, innovación constante y la capacidad de convertir proyectos 
+                  complejos en soluciones elegantes y funcionales.
                 </p>
                 
                 <p className="text-cyan-50 leading-relaxed text-lg">
-                  Aspiramos a crear un ecosistema donde la tecnología y el talento humano se fusionen para 
-                  anticipar el futuro, transformando desafíos en oportunidades y construyendo relaciones 
-                  duraderas basadas en la confianza y los resultados.
+                  Aspiramos a crear un ecosistema donde la programación de excelencia y el talento creativo 
+                  se fusionen para construir el futuro digital, transformando desafíos técnicos en oportunidades 
+                  de crecimiento y estableciendo relaciones duraderas basadas en la calidad del código y los resultados medibles.
                 </p>
               </div>
             </div>
@@ -180,11 +180,11 @@ export default function NosotrosPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">Valor Humano</h3>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Desarrolladores Apasionados</h3>
               <p className="text-slate-600 leading-relaxed">
-                Nuestro equipo está conformado por profesionales apasionados que entienden que la tecnología 
-                sirve a las personas. Cultivamos empatía, comunicación efectiva y un compromiso genuino con 
-                el bienestar de nuestros clientes y colegas.
+                Nuestro equipo está conformado por programadores que viven y respiran código. Cada desarrollador 
+                aporta creatividad, pensamiento crítico y una pasión genuina por resolver problemas complejos 
+                con soluciones elegantes. Cultivamos un ambiente de aprendizaje continuo y colaboración.
               </p>
             </div>
 
@@ -195,11 +195,11 @@ export default function NosotrosPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">Excelencia Técnica</h3>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Stack Tecnológico Moderno</h3>
               <p className="text-slate-600 leading-relaxed">
-                Invertimos continuamente en la capacitación y desarrollo de nuestro equipo técnico. Dominamos 
-                las últimas tecnologías, certificaciones y mejores prácticas de la industria para garantizar 
-                soluciones de vanguardia.
+                Trabajamos con las últimas tecnologías del ecosistema web: React, Next.js, TypeScript, 
+                Node.js, y más. Nos mantenemos actualizados con las tendencias del desarrollo, adoptando 
+                nuevas herramientas y frameworks cuando aportan valor real a nuestros proyectos.
               </p>
             </div>
 
@@ -210,11 +210,11 @@ export default function NosotrosPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">Innovación Continua</h3>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Código de Calidad</h3>
               <p className="text-slate-600 leading-relaxed">
-                No nos conformamos con el status quo. Fomentamos una cultura de innovación donde cada miembro 
-                del equipo es alentado a proponer ideas, experimentar y contribuir a la evolución constante de 
-                nuestras soluciones.
+                Nos enorgullece escribir código limpio, bien documentado y mantenible. Aplicamos patrones de 
+                diseño, principios SOLID, y realizamos code reviews exhaustivos. Cada proyecto se construye 
+                pensando en su escalabilidad, performance y facilidad de mantenimiento a largo plazo.
               </p>
             </div>
           </div>
@@ -241,10 +241,10 @@ export default function NosotrosPage() {
 
             <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-cyan-50">
-                ¿Listo para proteger lo que más importa?
+                ¿Tienes un proyecto en mente?
               </h2>
               <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
-                Únete a las empresas que confían en BackupTecno para salvaguardar su información crítica
+                Transformemos tu idea en una aplicación web excepcional. Hablemos de código.
               </p>
               <button className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] px-10 py-4 rounded-full font-bold text-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
                 Contáctanos
