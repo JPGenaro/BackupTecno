@@ -16,7 +16,7 @@ npm run dev
 Ver [documentación completa](./frontend/README.md)
 
 ### Backend (Próximamente)
-Implementación del backend del proyecto.
+Implementación del backend del proyecto. Mas a futuro
 
 ---
 
