@@ -95,7 +95,7 @@ export default function Home() {
   ];
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", backgroundColor: "#fff" }}>
+    <div id="inicio" style={{ padding: "20px", fontFamily: "Arial, sans-serif", backgroundColor: "#fff" }}>
       <header style={{ marginBottom: "30px", borderBottom: "2px solid #333", paddingBottom: "20px" }}>
         <h1 style={{ color: "#000" }}>🎉 Backup Tecno - Página de Prueba</h1>
         <p style={{ color: "#333", fontSize: "16px" }}>Bienvenido al frontend del proyecto</p>
@@ -193,7 +193,7 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section className="my-20 max-w-5xl mx-auto px-6">
+        <section id="servicios" className="my-20 max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-[#0B1829] mb-4">Nuestras Soluciones</h2>
             <p className="text-lg text-slate-600">Soluciones técnicas adaptadas a las necesidades de tu negocio.</p>
@@ -210,7 +210,7 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section className="my-20 max-w-5xl mx-auto px-6">
+        <section id="faq" className="my-20 max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-[#0B1829] mb-4">
               Preguntas Frecuentes
