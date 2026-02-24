@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ServiceCard from '../components/ServiceCard';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -35,6 +36,63 @@ export default function Home() {
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
+
+  const services = [
+    {
+      title: 'Desarrollo Web a Medida',
+      description: 'Aplicaciones y sitios web escalables con Next.js y React, optimizados para performance y SEO.',
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7h18M3 12h18M3 17h18" />
+        </svg>
+      )
+    },
+    {
+      title: 'APIs e Integraciones',
+      description: 'Diseño e implementación de APIs REST/GraphQL e integraciones con servicios externos.',
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+        </svg>
+      )
+    },
+    {
+      title: 'UX / UI y Diseño',
+      description: 'Prototipos y diseños centrados en la experiencia de usuario y la conversión.',
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7l6 6-6 6M21 7l-6 6 6 6" />
+        </svg>
+      )
+    },
+    {
+      title: 'DevOps & Despliegue',
+      description: 'Pipelines, CI/CD y despliegues en entornos cloud con observabilidad y buenas prácticas.',
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 13V7a2 2 0 00-2-2h-6M4 21v-6a2 2 0 012-2h6" />
+        </svg>
+      )
+    },
+    {
+      title: 'Mantenimiento & Soporte',
+      description: 'Planes de mantenimiento, monitoreo y soporte para mantener tu producto sano y actualizado.',
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3" />
+        </svg>
+      )
+    },
+    {
+      title: 'Consultoría Técnica',
+      description: 'Asesoramiento técnico para arquitectura, elección de stack y estimaciones de proyecto.',
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 14h.01M16 10h.01M12 18v.01" />
+        </svg>
+      )
+    }
+  ];
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", backgroundColor: "#fff" }}>
@@ -132,6 +190,23 @@ export default function Home() {
             <li>Define tipos en TypeScript para mejor IDE support</li>
             <li>Mantén el código limpio siguiendo las reglas de ESLint</li>
           </ul>
+        </section>
+
+        {/* Services Section */}
+        <section className="my-20 max-w-5xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0B1829] mb-4">Nuestras Soluciones</h2>
+            <p className="text-lg text-slate-600">Soluciones técnicas adaptadas a las necesidades de tu negocio.</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((s, idx) => (
+              <div key={s.title} style={{ animation: `fadeInUp 0.5s ease-out ${idx * 0.08}s both` }}>
+                <ServiceCard title={s.title} description={s.description} icon={s.icon} />
+              </div>
+            ))}
+          </div>
+          
         </section>
 
         {/* FAQ Section */}
