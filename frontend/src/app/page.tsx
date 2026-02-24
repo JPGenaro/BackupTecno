@@ -229,17 +229,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <footer style={{ 
-          marginTop: "60px", 
-          paddingTop: "20px", 
-          borderTop: "2px solid #333", 
-          textAlign: "center", 
-          color: "#333",
-          fontSize: "14px"
-        }}>
-          <p>Backup Tecno © 2026 | Página de prueba - Siéntete libre de modificar todo esto 🚀</p>
-        </footer>
       </main>
 
       <style jsx>{`
