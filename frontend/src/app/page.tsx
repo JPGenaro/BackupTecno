@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import HeroSection from '@/components/HeroSection';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -37,9 +38,13 @@ export default function Home() {
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", backgroundColor: "#fff" }}>
-      <main>
-        {/* FAQ Section */}
+    <>
+      {/* Hero Section - Full width */}
+      <HeroSection />
+
+      <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", backgroundColor: "#fff" }}>
+        <main>
+          {/* FAQ Section */}
         <section className="my-20 max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-[#0B1829] mb-4">
@@ -148,6 +153,7 @@ export default function Home() {
           }
         }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 }
