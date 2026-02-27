@@ -45,7 +45,7 @@ export default function Home() {
       <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", backgroundColor: "#fff" }}>
         <main>
           {/* FAQ Section */}
-        <section className="my-20 max-w-5xl mx-auto px-6">
+        <section id="faq" className="my-20 max-w-5xl mx-auto px-6 scroll-mt-20">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-[#0B1829] mb-4">
               Preguntas Frecuentes
