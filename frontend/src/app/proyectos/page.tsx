@@ -187,9 +187,9 @@ export default function ProyectosPage() {
               Cuéntanos tu idea y te ayudaremos a convertirla en una realidad. Tenemos experiencia en proyectos de cualquier escala y complejidad.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] px-8 py-4 rounded-full font-bold text-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
+              <a href="/contacto" className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] px-8 py-4 rounded-full font-bold text-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
                 Iniciar Proyecto
-              </button>
+              </a>
               <button className="border-2 border-cyan-400 text-cyan-100 px-8 py-4 rounded-full font-bold text-lg hover:bg-cyan-400/10 transition-all duration-300">
                 Ver Más Proyectos
               </button>

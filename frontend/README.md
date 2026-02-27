@@ -100,6 +100,23 @@ La forma más fácil de desplegar es usando [Vercel](https://vercel.com):
 2. Conecta tu repositorio en Vercel
 3. Vercel automáticamente detectará que es un proyecto Next.js y lo construirá
 
+## 📧 Captura de Leads / Contacto
+
+La aplicación incluye una página de contacto (`/contacto`) que captura nombre, email y mensaje de clientes potenciales.
+Al enviar el formulario se invoca un _API route_ (`/api/contact`) que utiliza **Gmail SMTP** para reenviar los datos al correo del desarrollador.
+
+Para que esta funcionalidad funcione en producción debe configurarse el siguiente archivo de variables de entorno `.env` o en el panel de tu proveedor:
+
+```text
+GMAIL_USER=tu.cuenta@gmail.com
+GMAIL_PASS=tu_contraseña_o_app_password
+```
+
+Utiliza una contraseña de aplicación de Google o activa el acceso de apps menos seguras según tu configuración. Prueba la verificación enviando un mensaje desde el formulario y revisa la bandeja de entrada del Gmail especificado.
+
+La validación y el envío se realizan solamente en el servidor, por lo que los datos nunca llegan al cliente.
+
+
 ## 📄 Licencia
 
 Este proyecto está bajo la licencia MIT.

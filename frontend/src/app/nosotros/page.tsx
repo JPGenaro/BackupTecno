@@ -246,9 +246,9 @@ export default function NosotrosPage() {
               <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
                 Transformemos tu idea en una aplicación web excepcional. Hablemos de código.
               </p>
-              <button className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] px-10 py-4 rounded-full font-bold text-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
+              <a href="/contacto" className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] px-10 py-4 rounded-full font-bold text-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
                 Contáctanos
-              </button>
+              </a>
             </div>
           </div>
         </div>

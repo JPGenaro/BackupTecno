@@ -13,6 +13,7 @@ export default function Navbar() {
     { href: '/servicios', label: 'Servicios' },
     { href: '/proyectos', label: 'Proyectos' },
     { href: '/nosotros', label: 'Nosotros' },
+    { href: '/contacto', label: 'Contacto' },
     { href: '/#faq', label: 'FAQ' },
   ];
 
@@ -71,9 +72,9 @@ export default function Navbar() {
 
           {/* CTA Button Desktop */}
           <div className="hidden md:block">
-            <button className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 transform hover:scale-105">
+            <Link href="/contacto" className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 transform hover:scale-105">
               Contactar
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -118,9 +119,9 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <button className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300">
+              <Link href="/contacto" className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300">
                 Contactar
-              </button>
+              </Link>
             </div>
           </div>
         )}
