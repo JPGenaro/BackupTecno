@@ -90,34 +90,6 @@ export default function HeroSection() {
               </button>
             </div>
           </div>
-
-          {/* Right side - Decorative element with stats */}
-          <div className="hidden lg:flex justify-center items-center animate-fadeInRight">
-            <div className="relative w-full h-96 flex items-center justify-center">
-              {/* Main card */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-2xl border border-cyan-400/30 backdrop-blur-sm"></div>
-              
-              {/* Stats grid */}
-              <div className="relative z-10 grid grid-cols-2 gap-6 p-8 w-full max-w-sm">
-                <div className="bg-gradient-to-br from-[#0B1829] to-[#1a2f42] rounded-xl p-6 border border-cyan-400/30 text-center group hover:border-cyan-400 transition-all hover:shadow-lg hover:shadow-cyan-500/20">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2 group-hover:scale-110 transition-transform">50+</div>
-                  <p className="text-cyan-100 text-sm font-medium">Proyectos Completados</p>
-                </div>
-                <div className="bg-gradient-to-br from-[#0B1829] to-[#1a2f42] rounded-xl p-6 border border-cyan-400/30 text-center group hover:border-cyan-400 transition-all hover:shadow-lg hover:shadow-cyan-500/20">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2 group-hover:scale-110 transition-transform">40+</div>
-                  <p className="text-cyan-100 text-sm font-medium">Clientes Satisfechos</p>
-                </div>
-                <div className="bg-gradient-to-br from-[#0B1829] to-[#1a2f42] rounded-xl p-6 border border-cyan-400/30 text-center group hover:border-cyan-400 transition-all hover:shadow-lg hover:shadow-cyan-500/20">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2 group-hover:scale-110 transition-transform">8+</div>
-                  <p className="text-cyan-100 text-sm font-medium">Años de Experiencia</p>
-                </div>
-                <div className="bg-gradient-to-br from-[#0B1829] to-[#1a2f42] rounded-xl p-6 border border-cyan-400/30 text-center group hover:border-cyan-400 transition-all hover:shadow-lg hover:shadow-cyan-500/20">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2 group-hover:scale-110 transition-transform">99%</div>
-                  <p className="text-cyan-100 text-sm font-medium">Clientes Felices</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 

@@ -171,33 +171,6 @@ export default function ProyectosPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="bg-gradient-to-r from-[#0B1829] to-[#153047] rounded-3xl p-12 md:p-16 text-center shadow-2xl relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-0 w-32 h-32 bg-cyan-400 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 right-0 w-40 h-40 bg-cyan-300 rounded-full blur-3xl"></div>
-          </div>
-          
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              ¿Tienes un proyecto similar en mente?
-            </h2>
-            <p className="text-cyan-100 text-lg mb-8 max-w-2xl mx-auto">
-              Cuéntanos tu idea y te ayudaremos a convertirla en una realidad. Tenemos experiencia en proyectos de cualquier escala y complejidad.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] px-8 py-4 rounded-full font-bold text-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
-                Iniciar Proyecto
-              </button>
-              <button className="border-2 border-cyan-400 text-cyan-100 px-8 py-4 rounded-full font-bold text-lg hover:bg-cyan-400/10 transition-all duration-300">
-                Ver Más Proyectos
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <style jsx>{`
         @keyframes fadeInUp {
           from {
