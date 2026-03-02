@@ -1,7 +1,6 @@
 # 🌐 Web Development Landing Page
 
-Aplicación web desarrollada con **Next.js** orientada a presentar servicios de desarrollo web.  
-Incluye secciones informativas, FAQ interactivo y componentes reutilizables siguiendo buenas prácticas modernas de frontend.
+Aplicación web desarrollada con **Next.js** orientada a presentar servicios de desarrollo web.
 
 ---
 
