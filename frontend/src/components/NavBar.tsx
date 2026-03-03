@@ -19,7 +19,6 @@ export default function Navbar() {
   ];
 
   const isActive = (href: string) => {
-    // Si el href contiene un hash, no es una ruta completa de página
     if (href.includes('#')) {
       return false;
     }

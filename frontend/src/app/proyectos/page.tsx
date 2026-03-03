@@ -13,57 +13,23 @@ export default function ProyectosPage() {
   const proyectos = [
     {
       id: 1,
-      title: "Plataforma E-commerce Premium",
-      description: "Tienda online de productos electrónicos con carrito de compras, sistema de pagos integrado y panel administrativo completo.",
-      imagen: "https://images.unsplash.com/photo-1571017614386-c1ca9536e406?w=600&h=400&fit=crop",
-      technologies: ["React", "Next.js", "Stripe", "PostgreSQL", "Tailwind CSS"],
-      link: "#",
+      title: "Penicord",
+      description: "Plataforma moderna de presentación y portafolio con arquitectura escalable. Sitio web profesional que showcasea servicios y proyectos usando componentes React reutilizables, animaciones fluidas y un diseño completamente responsivo.",
+      imagen: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Storybook"],
+      link: "https://penicord.vercel.app/",
+      github: "https://github.com/JPGenaro/Penicord",
       color: "from-cyan-500 to-blue-500"
     },
     {
       id: 2,
-      title: "App Gestión de Proyectos",
-      description: "Aplicación colaborativa para gestión de proyectos con tableros Kanban, asignación de tareas y seguimiento en tiempo real.",
-      imagen: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
-      technologies: ["React", "TypeScript", "Firebase", "Zustand", "CSS Modules"],
-      link: "#",
-      color: "from-purple-500 to-cyan-500"
-    },
-    {
-      id: 3,
-      title: "Dashboard Analytics Avanzado",
-      description: "Panel de control analítico con gráficas en tiempo real, exportación de reportes y visualización de datos complejos.",
-      imagen: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      technologies: ["Next.js", "Chart.js", "Node.js", "MongoDB", "Tailwind"],
-      link: "#",
+      title: "Sweet Life - Residencia para Adultos",
+      description: "Plataforma web de marketing para residencia de adultos mayores con diseño elegante e intuitivo. Incluye galería visual, descripción de servicios, información de contacto, mapa de ubicación y optimización SEO completa para visibilidad en buscadores.",
+      imagen: "https://images.unsplash.com/photo-1576091160550-08d0e0ba4ba0?w=600&h=400&fit=crop",
+      technologies: ["Next.js", "React", "Tailwind CSS", "Google Maps", "SEO Optimizado"],
+      link: "https://www.sweetlife.com.ar/",
+      github: "https://github.com/JPGenaro/Residencial-para-Adultos",
       color: "from-green-500 to-cyan-500"
-    },
-    {
-      id: 4,
-      title: "Red Social de Fotografía",
-      description: "Plataforma social especializada en fotógrafos con galería, comentarios, likes y sistema de seguimiento entre usuarios.",
-      imagen: "https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=600&h=400&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Socket.io", "AWS S3"],
-      link: "#",
-      color: "from-pink-500 to-cyan-500"
-    },
-    {
-      id: 5,
-      title: "SaaS de Automatización Marketing",
-      description: "Plataforma SaaS para automatizar campañas de email, gestionar leads y analizar ROI con integraciones de terceros.",
-      imagen: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
-      technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe"],
-      link: "#",
-      color: "from-orange-500 to-cyan-500"
-    },
-    {
-      id: 6,
-      title: "Plataforma Learning Online",
-      description: "Plataforma educativa con cursos, lecciones interactivas, videos en streaming y sistema de certificados automáticos.",
-      imagen: "https://images.unsplash.com/photo-1516534775068-bb6c51482313?w=600&h=400&fit=crop",
-      technologies: ["React", "Next.js", "Mux", "Supabase", "Tailwind CSS"],
-      link: "#",
-      color: "from-indigo-500 to-cyan-500"
     }
   ];
 
@@ -105,33 +71,38 @@ export default function ProyectosPage() {
 
       {/* Projects Grid */}
       <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {proyectos.map((proyecto, index) => (
-            <a
+            <div
               key={proyecto.id}
-              href={proyecto.link}
               className="group cursor-pointer"
               style={{
                 animation: `fadeInUp 0.5s ease-out ${index * 0.1}s both`
               }}
             >
-              <div className="relative h-64 overflow-hidden rounded-2xl shadow-lg mb-4 bg-slate-200">
-                <Image
-                  src={proyecto.imagen}
-                  alt={proyecto.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  unoptimized
-                />
-                {/* Overlay gradiente */}
-                <div className={`absolute inset-0 bg-gradient-to-t ${proyecto.color} opacity-0 group-hover:opacity-40 transition-opacity duration-300`}></div>
-                
-                {/* Badge flotante */}
-                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-[#0B1829] shadow-lg">
-                  Proyecto
+              <a
+                href={proyecto.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="relative h-64 overflow-hidden rounded-2xl shadow-lg mb-4 bg-slate-200">
+                  <Image
+                    src={proyecto.imagen}
+                    alt={proyecto.title}
+                    width={600}
+                    height={400}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    unoptimized
+                  />
+                  {/* Overlay gradiente */}
+                  <div className={`absolute inset-0 bg-gradient-to-t ${proyecto.color} opacity-0 group-hover:opacity-40 transition-opacity duration-300`}></div>
+                  
+                  {/* Badge flotante */}
+                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-[#0B1829] shadow-lg">
+                    Proyecto
+                  </div>
                 </div>
-              </div>
+              </a>
 
               {/* Card Content */}
               <div className="bg-white rounded-2xl border-2 border-slate-200 group-hover:border-cyan-400 p-6 transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-2">
@@ -158,15 +129,22 @@ export default function ProyectosPage() {
                   </div>
                 </div>
 
-                {/* View Project Link */}
-                <div className="mt-6 pt-6 border-t border-slate-200 flex items-center justify-between group/link">
-                  <span className="text-sm font-bold text-cyan-600">Ver Proyecto</span>
-                  <svg className="w-5 h-5 text-cyan-600 group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
+                {/* Action Button */}
+                <div className="mt-6 pt-6 border-t border-slate-200">
+                  <a
+                    href={proyecto.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2 px-4 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-semibold text-sm hover:from-cyan-600 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    Ver Proyecto
+                  </a>
                 </div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </section>

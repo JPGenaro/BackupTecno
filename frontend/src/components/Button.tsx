@@ -1,7 +1,3 @@
-/**
- * Componente de ejemplo
- * Reemplaza esto con tus componentes reales
- */
 
 interface ButtonProps {
   text: string;
