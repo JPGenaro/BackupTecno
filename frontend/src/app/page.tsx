@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import HeroSection from '@/components/HeroSection';
-import { Analytics } from "@vercel/analytics/next"
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
