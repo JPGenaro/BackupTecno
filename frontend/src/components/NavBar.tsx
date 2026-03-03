@@ -3,17 +3,19 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useContact } from '@/context/ContactContext';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const { openContact } = useContact();
 
   const navLinks = [
     { href: '/', label: 'Inicio' },
+    { href: '/#faq', label: 'FAQ' },
     { href: '/servicios', label: 'Servicios' },
     { href: '/proyectos', label: 'Proyectos' },
     { href: '/nosotros', label: 'Nosotros' },
-    { href: '/#faq', label: 'FAQ' },
   ];
 
   const isActive = (href: string) => {
@@ -71,7 +73,10 @@ export default function Navbar() {
 
           {/* CTA Button Desktop */}
           <div className="hidden md:block">
-            <button className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 transform hover:scale-105">
+            <button
+              onClick={openContact}
+              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 transform hover:scale-105"
+            >
               Contactar
             </button>
           </div>
@@ -118,7 +123,13 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <button className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300">
+              <button
+                onClick={() => {
+                  closeMenu();
+                  openContact();
+                }}
+                className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
+              >
                 Contactar
               </button>
             </div>

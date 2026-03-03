@@ -1,8 +1,10 @@
 'use client';
 
 import Image from 'next/image';
+import { useContact } from '@/context/ContactContext';
 
 export default function HeroSection() {
+  const { openContact } = useContact();
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0B1829] via-[#0f1f2e] to-[#1a2f42]">
       {/* Animated background elements */}
@@ -82,7 +84,10 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center lg:justify-start">
-              <button className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] font-bold text-lg rounded-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl hover:shadow-cyan-500/50">
+              <button
+                onClick={openContact}
+                className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] font-bold text-lg rounded-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl hover:shadow-cyan-500/50"
+              >
                 Comenzar Proyecto
               </button>
               <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-300 font-bold text-lg rounded-lg hover:bg-cyan-400/10 transition-all duration-300 transform hover:scale-105 hover:text-cyan-200">

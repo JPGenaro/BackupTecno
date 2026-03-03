@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useContact } from '@/context/ContactContext';
 
 export default function ServiciosPage() {
   const [isVisible, setIsVisible] = useState(false);
+  const { openContact } = useContact();
 
   useEffect(() => {
     setIsVisible(true);
@@ -224,7 +226,10 @@ export default function ServiciosPage() {
             <p className="text-cyan-100 text-lg mb-8 max-w-2xl mx-auto">
               Nuestro equipo de expertos está aquí para ayudarte a alcanzar tus objetivos
             </p>
-            <button className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] px-10 py-4 rounded-full font-bold text-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
+            <button
+              onClick={openContact}
+              className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] px-10 py-4 rounded-full font-bold text-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl"
+            >
               Solicitar Consulta Gratuita
             </button>
           </div>
