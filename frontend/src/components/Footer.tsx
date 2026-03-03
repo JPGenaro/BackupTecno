@@ -42,7 +42,7 @@ export default function Footer() {
     <footer className="bg-gradient-to-b from-gray-900 to-black text-white pt-16 pb-8">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 text-center md:text-left">
           {/* Brand Section */}
           <div className="col-span-1">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-4">
@@ -71,12 +71,12 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold mb-4 text-blue-400">Contacto Rápido</h4>
             <ul className="space-y-3">
               {contactInfo.map((item, index) => (
                 <li key={index} className="text-sm">
-                  <div className="flex items-start gap-2">
+                  <div className="flex flex-col items-center md:flex-row md:items-start gap-2">
                     <span className="text-lg mt-0.5">{item.icon}</span>
                     <div>
                       <p className="text-gray-500 text-xs">{item.label}</p>
@@ -91,7 +91,7 @@ export default function Footer() {
           {/* Social Networks */}
           <div>
             <h4 className="text-lg font-semibold mb-4 text-blue-400">Redes Sociales</h4>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
               <Link
                 href="https://www.instagram.com/backuptecno/"
                 target="_blank"
@@ -121,14 +121,14 @@ export default function Footer() {
         <div className="border-t border-gray-800 my-8"></div>
 
         {/* Footer Bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="text-gray-500 text-sm mb-4 md:mb-0">
+        <div className="flex flex-col gap-4 md:gap-0 md:flex-row justify-center md:justify-between items-center">
+          <div className="text-gray-500 text-sm text-center md:text-left">
             <p>
               © {currentYear} <span className="text-blue-400 font-semibold">Backup Tecno</span>. Todos los derechos reservados.
             </p>
           </div>
 
-          <div className="flex gap-6 text-sm">
+          <div className="flex flex-wrap gap-6 text-sm justify-center md:justify-end">
             <Link
               href="#"
               className="text-gray-500 hover:text-blue-400 transition-colors duration-300"
