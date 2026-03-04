@@ -4,17 +4,49 @@ import { NextRequest, NextResponse } from 'next/server';
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.GMAIL_USER || 'backup.tecno9@gmail.com',
-    pass: process.env.GMAIL_APP_PASSWORD || '', 
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
   },
 });
 
+// Función para sanitizar texto y prevenir XSS
+function sanitizeInput(input: string): string {
+  if (!input) return '';
+  return input
+    .replace(/[<>]/g, '') // Eliminar < y >
+    .replace(/script/gi, '')
+    .replace(/on\w+=/gi, '') // Eliminar event handlers
+    .trim();
+}
+
+// Función para validar email
+function isValidEmail(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { name, email, phone, subject, message } = body;
+    // Verificar que las variables de entorno estén configuradas
+    if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
+      console.error('Variables de entorno no configuradas');
+      return NextResponse.json(
+        { message: 'Error de configuración del servidor' },
+        { status: 500 }
+      );
+    }
 
-    // Validar que los campos requeridos estén presentes
+    const body = await request.json();
+    let { name, email, phone, subject, message } = body;
+
+    // Sanitizar todas las entradas
+    name = sanitizeInput(name);
+    email = sanitizeInput(email);
+    phone = sanitizeInput(phone);
+    subject = sanitizeInput(subject);
+    message = sanitizeInput(message);
+
+    // Validar que los campos requeridos estén presentes y sean válidos
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
         { message: 'Faltan campos requeridos' },
@@ -22,10 +54,26 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validar formato de email
+    if (!isValidEmail(email)) {
+      return NextResponse.json(
+        { message: 'Email inválido' },
+        { status: 400 }
+      );
+    }
+
+    // Validar longitud máxima de campos
+    if (name.length > 100 || subject.length > 200 || message.length > 5000 || phone.length > 20) {
+      return NextResponse.json(
+        { message: 'Los campos exceden la longitud máxima permitida' },
+        { status: 400 }
+      );
+    }
+
     // Preparar el correo
     const mailOptions = {
-      from: process.env.GMAIL_USER || 'backup.tecno9@gmail.com',
-      to: process.env.GMAIL_USER || 'backup.tecno9@gmail.com',
+      from: process.env.GMAIL_USER,
+      to: process.env.GMAIL_USER,
       replyTo: email,
       subject: `Nuevo Contacto: ${subject}`,
       html: `
@@ -74,7 +122,7 @@ export async function POST(request: NextRequest) {
 
     // También enviar un correo de confirmación al cliente
     const confirmationEmail = {
-      from: process.env.GMAIL_USER || 'backup.tecno9@gmail.com',
+      from: process.env.GMAIL_USER,
       to: email,
       subject: 'Confirmación de tu mensaje - Backup Tecno',
       html: `
