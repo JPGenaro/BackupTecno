@@ -30,6 +30,16 @@ export default function ProyectosPage() {
       link: "https://www.sweetlife.com.ar/",
       github: "https://github.com/JPGenaro/Residencial-para-Adultos",
       color: "from-green-500 to-cyan-500"
+    },
+    {
+      id: 3,
+      title: "CarShop - Tienda de Repuestos",
+      description: "Plataforma e-commerce full-stack para una tienda especializada en repuestos automotrices. Incluye catálogo productos con búsqueda inteligente, filtros avanzados, fichas técnicas detalladas, carrito de compras, autenticación de usuarios y administración completa de inventario con panel de control.",
+      imagen: "/carshop_fondo.png",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Django", "Django REST Framework", "PostgreSQL"],
+      link: "https://car-shop-dusky.vercel.app/",
+      github: "https://github.com/JPGenaro/CarShop",
+      color: "from-orange-500 to-red-500"
     }
   ];
 

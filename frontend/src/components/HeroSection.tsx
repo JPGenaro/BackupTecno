@@ -1,9 +1,11 @@
 'use client';
 
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useContact } from '@/context/ContactContext';
 
 export default function HeroSection() {
+  const router = useRouter();
   const { openContact } = useContact();
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0B1829] via-[#0f1f2e] to-[#1a2f42]">
@@ -90,7 +92,9 @@ export default function HeroSection() {
               >
                 Comenzar Proyecto
               </button>
-              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-300 font-bold text-lg rounded-lg hover:bg-cyan-400/10 transition-all duration-300 transform hover:scale-105 hover:text-cyan-200">
+              <button 
+                onClick={() => router.push('/proyectos')}
+                className="px-8 py-4 border-2 border-cyan-400 text-cyan-300 font-bold text-lg rounded-lg hover:bg-cyan-400/10 transition-all duration-300 transform hover:scale-105 hover:text-cyan-200">
                 Ver Portafolio
               </button>
             </div>
