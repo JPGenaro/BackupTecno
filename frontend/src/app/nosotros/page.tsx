@@ -77,7 +77,7 @@ export default function NosotrosPage() {
               </p>
               
               <p className="text-slate-700 leading-relaxed text-lg">
-                Hoy, BackupTecno es sinónimo de desarrollo web de excelencia. Hemos crecido junto a 
+                Hoy, BackupTecno es sinónimo de desarrollo web. Hemos crecido junto a 
                 nuestros clientes, evolucionando con las últimas tecnologías y frameworks para anticiparnos a las 
                 tendencias del mercado. Cada proyecto nos ha fortalecido, cada línea de código nos ha inspirado 
                 a seguir mejorando nuestro craft.

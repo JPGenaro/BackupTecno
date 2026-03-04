@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useContact } from '@/context/ContactContext';
 
@@ -8,12 +7,15 @@ export default function HeroSection() {
   const router = useRouter();
   const { openContact } = useContact();
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0B1829] via-[#0f1f2e] to-[#1a2f42]">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#0B1829]">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-cyan-400/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute -top-20 -left-16 w-96 h-96 bg-cyan-400/25 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-28 -right-20 w-[28rem] h-[28rem] bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-[34rem] h-[34rem] -translate-x-1/2 -translate-y-1/2 bg-cyan-300/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.16),transparent_36%),radial-gradient(circle_at_80%_80%,rgba(14,165,233,0.12),transparent_32%)]"></div>
+        <div className="absolute inset-0 opacity-[0.18] [background:linear-gradient(120deg,rgba(34,211,238,0.18),transparent_22%,transparent_78%,rgba(14,165,233,0.18))]"></div>
       </div>
 
       {/* Grid pattern overlay */}
@@ -24,41 +26,27 @@ export default function HeroSection() {
 
       {/* Content container */}
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-12 sm:py-16 lg:py-24">
+        <div className="grid grid-cols-1 items-center py-12 sm:py-16 lg:py-24">
           
           {/* Left content */}
-          <div className="space-y-8 text-center lg:text-left animate-fadeInLeft">
-            {/* Logo */}
-            <div className="flex justify-center lg:justify-start">
-              <div className="relative h-16 w-auto">
-                <Image
-                  src="/logo.png"
-                  alt="BackupTecno Logo"
-                  width={200}
-                  height={64}
-                  className="h-16 w-auto object-contain"
-                  priority
-                />
-              </div>
-            </div>
-
+          <div className="space-y-8 text-center animate-fadeInLeft">
             {/* Main headline */}
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Soluciones Web{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-400 animate-pulse">
-                  Innovadoras
+            <div className="space-y-5">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight">
+                <span className="block text-cyan-50/95">Elevá tu presencia digital con</span>
+                <span className="mt-2 block bg-gradient-to-r from-cyan-200 via-cyan-300 to-sky-300 bg-clip-text text-transparent [text-shadow:0_0_18px_rgba(34,211,238,0.32)] tracking-wide">
+                  BackupTecno
                 </span>
               </h1>
-              <p className="text-lg sm:text-xl text-cyan-100 font-light leading-relaxed max-w-lg">
-                Transformamos tus ideas en aplicaciones web modernas, escalables y de alto rendimiento. 
+              <p className="text-lg sm:text-xl text-cyan-100 font-light leading-relaxed max-w-3xl mx-auto">
+                En <span className="font-bold text-cyan-300">BackupTecno</span> transformamos tus ideas en aplicaciones web modernas, escalables y de alto rendimiento. 
                 Nuestro equipo experto te ayudará a alcanzar tus objetivos digitales.
               </p>
             </div>
 
             {/* Value propositions */}
             <div className="space-y-3 pt-4">
-              <div className="flex items-start gap-3 justify-center lg:justify-start group">
+              <div className="flex items-start gap-3 justify-center group">
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mt-1 group-hover:scale-110 transition-transform">
                   <svg className="w-4 h-4 text-[#0B1829]" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -66,7 +54,7 @@ export default function HeroSection() {
                 </div>
                 <span className="text-white text-sm sm:text-base font-medium">Tecnología de última generación</span>
               </div>
-              <div className="flex items-start gap-3 justify-center lg:justify-start group">
+              <div className="flex items-start gap-3 justify-center group">
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mt-1 group-hover:scale-110 transition-transform">
                   <svg className="w-4 h-4 text-[#0B1829]" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -74,7 +62,7 @@ export default function HeroSection() {
                 </div>
                 <span className="text-white text-sm sm:text-base font-medium">Equipos ágiles y experimentados</span>
               </div>
-              <div className="flex items-start gap-3 justify-center lg:justify-start group">
+              <div className="flex items-start gap-3 justify-center group">
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mt-1 group-hover:scale-110 transition-transform">
                   <svg className="w-4 h-4 text-[#0B1829]" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -85,7 +73,7 @@ export default function HeroSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center">
               <button
                 onClick={openContact}
                 className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] font-bold text-lg rounded-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl hover:shadow-cyan-500/50"
