@@ -34,18 +34,20 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <nav className="sticky top-0 z-50 border-b border-blue-100/60 bg-slate-50/95 backdrop-blur-md shadow-[0_10px_30px_rgba(11,24,41,0.10)]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-18 py-3">
           {/* Logo */}
           <Link 
             href="/" 
-            className="flex items-center space-x-2 text-xl md:text-2xl font-bold text-[#0B1829] hover:text-cyan-600 transition-colors"
+            className="group flex items-center gap-3 text-xl md:text-2xl font-bold text-[#0B1829] transition-colors"
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center">
+            <div className="w-9 h-9 bg-gradient-to-br from-sky-500 via-blue-600 to-indigo-700 rounded-xl flex items-center justify-center shadow-md shadow-blue-500/30 group-hover:scale-105 transition-transform duration-300">
               <span className="text-white font-bold">BT</span>
             </div>
-            <span className="hidden sm:inline">Backup Tecno</span>
+            <span className="hidden sm:inline bg-gradient-to-r from-[#0B1829] to-blue-700 bg-clip-text text-transparent">
+              Backup Tecno
+            </span>
           </Link>
 
           {/* Desktop Menu */}
@@ -54,15 +56,15 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-medium transition-colors duration-300 relative group ${
+                className={`font-semibold transition-colors duration-300 relative group ${
                   isActive(link.href)
-                    ? 'text-cyan-600'
-                    : 'text-gray-700 hover:text-cyan-600'
+                    ? 'text-blue-700'
+                    : 'text-slate-700 hover:text-blue-700'
                 }`}
               >
                 {link.label}
                 <span
-                  className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-500 to-cyan-600 transform transition-transform duration-300 ${
+                  className={`absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-sky-500 to-blue-700 transform transition-transform duration-300 ${
                     isActive(link.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                   }`}
                 />
@@ -74,7 +76,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <button
               onClick={openContact}
-              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 transform hover:scale-105"
+              className="px-6 py-2.5 bg-gradient-to-r from-sky-500 to-blue-700 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:scale-105"
             >
               Contactar
             </button>
@@ -83,7 +85,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden flex flex-col items-center space-y-1.5 p-2 text-[#0B1829] hover:text-cyan-600 transition-colors"
+            className="md:hidden flex flex-col items-center space-y-1.5 p-2 text-[#0B1829] hover:text-blue-700 transition-colors"
             aria-label="Toggle menu"
           >
             <span
@@ -106,17 +108,17 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pb-6 border-t border-gray-200">
-            <div className="flex flex-col space-y-2 pt-4">
+          <div className="md:hidden pb-5 pt-2 border-t border-blue-100/80">
+            <div className="flex flex-col space-y-2 pt-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={closeMenu}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+                  className={`px-4 py-2.5 rounded-lg font-medium transition-all duration-300 border-l-2 ${
                     isActive(link.href)
-                      ? 'bg-gradient-to-r from-cyan-500 to-cyan-600 text-white'
-                      : 'text-gray-700 hover:bg-gray-100'
+                      ? 'text-blue-700 bg-blue-50 border-blue-500'
+                      : 'text-slate-700 hover:bg-blue-50 border-transparent hover:border-blue-300'
                   }`}
                 >
                   {link.label}
@@ -127,7 +129,7 @@ export default function Navbar() {
                   closeMenu();
                   openContact();
                 }}
-                className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
+                className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-sky-500 to-blue-700 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300"
               >
                 Contactar
               </button>
