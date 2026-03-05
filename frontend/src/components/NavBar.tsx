@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useContact } from '@/context/ContactContext';
 
@@ -42,9 +43,13 @@ export default function Navbar() {
             href="/" 
             className="group flex items-center gap-3 text-xl md:text-2xl font-bold text-[#0B1829] transition-colors"
           >
-            <div className="w-9 h-9 bg-gradient-to-br from-sky-500 via-blue-600 to-indigo-700 rounded-xl flex items-center justify-center shadow-md shadow-blue-500/30 group-hover:scale-105 transition-transform duration-300">
-              <span className="text-white font-bold">BT</span>
-            </div>
+            <Image 
+              src="/logo_real_no_fake_A.png" 
+              alt="Backup Tecno Logo"
+              width={32}
+              height={32}
+              className="group-hover:scale-105 transition-transform duration-300"
+            />
             <span className="hidden sm:inline bg-gradient-to-r from-[#0B1829] to-blue-700 bg-clip-text text-transparent">
               Backup Tecno
             </span>
