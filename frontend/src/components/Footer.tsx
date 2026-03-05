@@ -130,7 +130,7 @@ export default function Footer() {
 
           <div className="flex flex-wrap gap-6 text-sm justify-center md:justify-end">
             <Link
-              href="#"
+              href="/politica-privacidad"
               className="text-gray-500 hover:text-blue-400 transition-colors duration-300"
             >
               Política de Privacidad
