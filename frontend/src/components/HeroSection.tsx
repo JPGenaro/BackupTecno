@@ -45,25 +45,25 @@ export default function HeroSection() {
             </div>
 
             {/* Value propositions */}
-            <div className="space-y-3 pt-4">
-              <div className="flex items-start gap-3 justify-center group">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mt-1 group-hover:scale-110 transition-transform">
+            <div className="flex flex-wrap justify-center gap-6 pt-4">
+              <div className="flex items-center gap-3 group">
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <svg className="w-4 h-4 text-[#0B1829]" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <span className="text-white text-sm sm:text-base font-medium">Tecnología de última generación</span>
               </div>
-              <div className="flex items-start gap-3 justify-center group">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mt-1 group-hover:scale-110 transition-transform">
+              <div className="flex items-center gap-3 group">
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <svg className="w-4 h-4 text-[#0B1829]" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <span className="text-white text-sm sm:text-base font-medium">Equipos ágiles y experimentados</span>
               </div>
-              <div className="flex items-start gap-3 justify-center group">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mt-1 group-hover:scale-110 transition-transform">
+              <div className="flex items-center gap-3 group">
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <svg className="w-4 h-4 text-[#0B1829]" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
