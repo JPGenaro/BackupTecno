@@ -35,7 +35,7 @@ export default function HeroSection() {
             <div className="flex justify-center mb-4">
               <div className="animate-bounce" style={{ animationDuration: '3s' }}>
                 <Image
-                  src="/logo_real_no_fake_A.png"
+                  src="/logo_real_no_fake_A.webp"
                   alt="Backup Tecno Logo"
                   width={80}
                   height={80}

@@ -23,10 +23,10 @@ export const metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.webp", sizes: "16x16", type: "image/webp" },
+      { url: "/favicon-32x32.webp", sizes: "32x32", type: "image/webp" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "/apple-touch-icon.webp",
   },
   manifest: "/site.webmanifest",
 };

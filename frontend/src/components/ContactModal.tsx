@@ -95,7 +95,7 @@ export default function ContactModal() {
         <div className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white p-6 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <Image
-              src="/logo_real_no_fake_A.png"
+              src="/logo_real_no_fake_A.webp"
               alt="Backup Tecno Logo"
               width={36}
               height={36}

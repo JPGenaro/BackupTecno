@@ -44,7 +44,7 @@ export default function Navbar() {
             className="group flex items-center gap-3 text-xl md:text-2xl font-bold text-[#0B1829] transition-colors"
           >
             <Image 
-              src="/logo_real_no_fake_A.png" 
+              src="/logo_real_no_fake_A.webp" 
               alt="Backup Tecno Logo"
               width={32}
               height={32}
