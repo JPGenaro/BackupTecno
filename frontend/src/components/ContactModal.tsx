@@ -16,6 +16,7 @@ export default function ContactModal() {
   const [isLoading, setIsLoading] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [showCenterNotification, setShowCenterNotification] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -48,12 +49,13 @@ export default function ContactModal() {
           subject: '',
           message: '',
         });
-
-        // Cerrar modal después de 2 segundos
+        // Mostrar notificación centrada por 5 segundos y cerrar modal después
+        setShowCenterNotification(true);
         setTimeout(() => {
-          closeContact();
+          setShowCenterNotification(false);
           setSubmitStatus('idle');
-        }, 2000);
+          closeContact();
+        }, 5000);
       } else {
         const error = await response.json();
         setSubmitStatus('error');
@@ -72,6 +74,22 @@ export default function ContactModal() {
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      {showCenterNotification && (
+        <div className="fixed inset-0 flex items-center justify-center z-60 pointer-events-none">
+          <div className="pointer-events-auto bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-xl shadow-lg px-5 py-4 max-w-sm w-full mx-4 text-left flex items-start gap-3 ring-1 ring-white/10">
+            <div className="flex-shrink-0 mt-0.5">
+              <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <circle cx="12" cy="12" r="11" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
+                <path d="M7 12.5l2.5 2.5L17 8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <div className="flex flex-col">
+              <p className="text-sm font-semibold text-white">Petición enviada correctamente!</p>
+              <p className="text-xs text-white/90 mt-1">Gracias. Nos contactaremos pronto.</p>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white p-6 flex justify-between items-center">
