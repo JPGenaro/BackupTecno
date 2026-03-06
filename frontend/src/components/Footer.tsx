@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from 'next/image';
 import { useContact } from '@/context/ContactContext';
 
 const InstagramIcon = () => (
@@ -48,11 +49,19 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 text-center md:text-left">
           {/* Brand Section */}
-          <div className="col-span-1">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-4">
-              Backup Tecno
-            </h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
+          <div className="col-span-1 flex flex-col items-center md:items-start">
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/logo_real_no_fake_A.png"
+                alt="Backup Tecno Logo"
+                width={48}
+                height={48}
+              />
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                Backup Tecno
+              </h3>
+            </div>
+            <p className="text-gray-400 text-sm leading-relaxed text-center md:text-left">
               Soluciones web innovadoras y desarrollo de excelencia para transformar tu negocio digital.
             </p>
           </div>

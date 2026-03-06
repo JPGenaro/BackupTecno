@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { useContact } from '@/context/ContactContext';
 
 export default function ContactModal() {
@@ -74,7 +75,15 @@ export default function ContactModal() {
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white p-6 flex justify-between items-center">
-          <h2 className="text-2xl font-bold">Contactános</h2>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/logo_real_no_fake_A.png"
+              alt="Backup Tecno Logo"
+              width={36}
+              height={36}
+            />
+            <h2 className="text-2xl font-bold">Contactános</h2>
+          </div>
           <button
             onClick={closeContact}
             className="text-white hover:text-gray-200 transition-colors"

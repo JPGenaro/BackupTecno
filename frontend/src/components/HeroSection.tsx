@@ -1,6 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { useContact } from '@/context/ContactContext';
 
 export default function HeroSection() {
@@ -30,6 +31,19 @@ export default function HeroSection() {
           
           {/* Left content */}
           <div className="space-y-8 text-center animate-fadeInLeft">
+            {/* Logo */}
+            <div className="flex justify-center mb-4">
+              <div className="animate-bounce" style={{ animationDuration: '3s' }}>
+                <Image
+                  src="/logo_real_no_fake_A.png"
+                  alt="Backup Tecno Logo"
+                  width={80}
+                  height={80}
+                  className="drop-shadow-lg"
+                />
+              </div>
+            </div>
+            
             {/* Main headline */}
             <div className="space-y-5">
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight">
