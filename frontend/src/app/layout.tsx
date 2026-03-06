@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
+import CookieBanner from "@/components/CookieBanner";
 import { ContactProvider } from "@/context/ContactContext";
 import "./globals.css";
 
@@ -45,6 +46,7 @@ export default function RootLayout({
           <div className="flex-1">{children}</div>
           <Footer />
           <ContactModal />
+          <CookieBanner />
         </ContactProvider>
       </body>
     </html>

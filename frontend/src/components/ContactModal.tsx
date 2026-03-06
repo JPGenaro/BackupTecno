@@ -76,16 +76,16 @@ export default function ContactModal() {
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
       {showCenterNotification && (
         <div className="fixed inset-0 flex items-center justify-center z-60 pointer-events-none">
-          <div className="pointer-events-auto bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-xl shadow-lg px-5 py-4 max-w-sm w-full mx-4 text-left flex items-start gap-3 ring-1 ring-white/10">
-            <div className="flex-shrink-0 mt-0.5">
-              <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <div className="pointer-events-auto bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-2xl shadow-2xl px-8 py-6 max-w-lg w-full mx-4 text-left flex items-start gap-4 ring-1 ring-white/10">
+            <div className="flex-shrink-0 mt-1">
+              <svg className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" aria-hidden>
                 <circle cx="12" cy="12" r="11" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
                 <path d="M7 12.5l2.5 2.5L17 8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
             <div className="flex flex-col">
-              <p className="text-sm font-semibold text-white">Petición enviada correctamente!</p>
-              <p className="text-xs text-white/90 mt-1">Gracias. Nos contactaremos pronto.</p>
+              <p className="text-lg font-semibold text-white">¡Petición enviada correctamente!</p>
+              <p className="text-sm text-white/90 mt-2">Gracias. Nos contactaremos pronto.</p>
             </div>
           </div>
         </div>
