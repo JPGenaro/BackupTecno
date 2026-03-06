@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Backup Tecno</ShortName>
+  <Description>Buscar en el sitio web de Backup Tecno - Desarrollo Web Profesional</Description>
+  <Url type="text/html" template="https://backuptecno.com/search?q={searchTerms}"/>
+  <Url type="application/atom+xml" template="https://backuptecno.com/feed.xml?q={searchTerms}"/>
+  <Contact>contacto@backuptecno.com</Contact>
+  <Tags>web development nextjs react typescript</Tags>
+  <LongName>Backup Tecno - Desarrollo Web Profesional</LongName>
+  <Image height="64" width="64" type="image/png">https://backuptecno.com/android-chrome-192x192.webp</Image>
+  <Query role="example" searchTerms="desarrollo web"/>
+  <Developer>Backup Tecno</Developer>
+  <Attribution>Backup Tecno © 2026. Todos los derechos reservados.</Attribution>
+  <SyndicationRight>private</SyndicationRight>
+  <AdultContent>false</AdultContent>
+  <Language>es-AR</Language>
+  <OutputEncoding>UTF-8</OutputEncoding>
+  <InputEncoding>UTF-8</InputEncoding>
+</OpenSearchDescription>
