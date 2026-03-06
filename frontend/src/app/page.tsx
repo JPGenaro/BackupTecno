@@ -257,13 +257,6 @@ Modelos de trabajo disponibles:
 - Modelo híbrido personalizado
 - Agile coaching para tu equipo
 
-Herramientas que usamos:
-- Git para versionado (GitHub, GitLab)
-- Jira para seguimiento de tareas
-- Slack para comunicación
-- Azure DevOps
-- Confluence para documentación
-
 Nos adaptamos a tu flujo de trabajo.`
       },
       {
@@ -290,31 +283,6 @@ Testing de usuario:
 - Accesibilidad en navegadores
 - Experiencia de usuario`
       },
-      {
-        question: "¿Cuál es el tiempo de respuesta para soporte técnico?",
-        answer: `Tiempos de respuesta garantizados por plan:
-
-Plan Básico:
-- Respuesta: 48 horas
-- Ideal para sitios estáticos
-
-Plan Premium:
-- Respuesta: 24 horas
-- Horas de soporte: 20/mes
-- Más frecuente
-
-Plan Enterprise:
-- Respuesta: 4 horas
-- Soporte prioritario
-- Horas ilimitadas
-
-Emergencias críticas:
-- Respuesta inmediata 24/7
-- Costo adicional
-- Garantizado para negocio crítico
-
-Contacto directo con equipo técnico.`
-      }
     ],
     pagos: [
       {
