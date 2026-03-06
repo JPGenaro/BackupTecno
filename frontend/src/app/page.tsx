@@ -45,24 +45,6 @@ export default function Home() {
       {/* Hero Section - Full width */}
       <HeroSection />
 
-      {/* Services anchor target (empty or preview) */}
-      <section id="servicios" className="my-16 max-w-5xl mx-auto px-6 scroll-mt-20">
-        <h2 className="text-3xl font-bold text-[#0B1829] mb-4 text-center">
-          Descubrí Nuestros Servicios
-        </h2>
-        <p className="text-center text-slate-600 mb-6">
-          Ofrecemos desarrollo web, diseño UI/UX, consultoría tecnológica y más. Conocé todos los detalles en nuestra página de servicios.
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => window.location.href = '/servicios'}
-            className="px-6 py-3 bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] rounded-lg font-bold hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300"
-          >
-            Ver Servicios
-          </button>
-        </div>
-      </section>
-
       <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", backgroundColor: "#fff" }}>
         <main>
           {/* FAQ Section */}
