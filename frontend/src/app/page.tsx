@@ -45,6 +45,24 @@ export default function Home() {
       {/* Hero Section - Full width */}
       <HeroSection />
 
+      {/* Services anchor target (empty or preview) */}
+      <section id="servicios" className="my-16 max-w-5xl mx-auto px-6 scroll-mt-20">
+        <h2 className="text-3xl font-bold text-[#0B1829] mb-4 text-center">
+          Descubrí Nuestros Servicios
+        </h2>
+        <p className="text-center text-slate-600 mb-6">
+          Ofrecemos desarrollo web, diseño UI/UX, consultoría tecnológica y más. Conocé todos los detalles en nuestra página de servicios.
+        </p>
+        <div className="text-center">
+          <button
+            onClick={() => window.location.href = '/servicios'}
+            className="px-6 py-3 bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] rounded-lg font-bold hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300"
+          >
+            Ver Servicios
+          </button>
+        </div>
+      </section>
+
       <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", backgroundColor: "#fff" }}>
         <main>
           {/* FAQ Section */}
@@ -124,7 +142,7 @@ export default function Home() {
           </div>
 
           {/* CTA después del FAQ */}
-          <div className="mt-12 text-center bg-gradient-to-r from-[#0B1829] to-[#153047] rounded-2xl p-10 shadow-xl relative overflow-hidden">
+          <div id="contacto" className="mt-12 text-center bg-gradient-to-r from-[#0B1829] to-[#153047] rounded-2xl p-10 shadow-xl relative overflow-hidden">
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 left-0 w-32 h-32 bg-cyan-400 rounded-full blur-3xl"></div>
               <div className="absolute bottom-0 right-0 w-40 h-40 bg-cyan-300 rounded-full blur-3xl"></div>
