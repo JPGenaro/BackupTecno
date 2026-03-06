@@ -1,5 +1,5 @@
-import type { Metadata, ReactNode } from "next";
-import React from "react";
+import type { Metadata } from "next";
+import React, { ReactNode } from "react";
 import SchemaOrg from "@/components/SchemaOrg";
 import { organizationSchema, businessSchema } from "@/utils/seoSchemas";
 import { siteVerification } from "@/utils/siteVerification";
