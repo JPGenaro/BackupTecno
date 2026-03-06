@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, ReactNode } from "next";
+import React from "react";
 import SchemaOrg from "@/components/SchemaOrg";
 import { organizationSchema, businessSchema } from "@/utils/seoSchemas";
 import { siteVerification } from "@/utils/siteVerification";
@@ -7,7 +8,7 @@ import { siteVerification } from "@/utils/siteVerification";
  * Componente para verificación de sitios y schema global
  * Se puede usar en layout.tsx o page.tsx como Server Component
  */
-export function SEOHead(): JSX.Element {
+export function SEOHead(): ReactNode {
   return (
     <>
       {/* Google Site Verification */}
