@@ -1,4 +1,7 @@
+'use client';
+
 import Link from "next/link";
+import { useContact } from '@/context/ContactContext';
 
 const InstagramIcon = () => (
   <svg
@@ -23,13 +26,14 @@ const WhatsAppIcon = () => (
 );
 
 export default function Footer() {
+  const { openContact } = useContact();
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
     { label: "Inicio", href: "/" },
     { label: "Sobre Nosotros", href: "/nosotros" },
-    { label: "Servicios", href: "#servicios" },
-    { label: "Contacto", href: "#contacto" },
+    { label: "Servicios", href: "/servicios" },
+    // Contact will be handled specially below to open the contact modal
   ];
 
 
@@ -67,6 +71,14 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={openContact}
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm"
+                >
+                  Contacto
+                </button>
+              </li>
             </ul>
           </div>
 

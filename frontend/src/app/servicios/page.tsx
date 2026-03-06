@@ -160,7 +160,10 @@ export default function ServiciosPage() {
 
               {/* Bottom CTA */}
               <div className="px-8 pb-8">
-                <button className="w-full py-2 px-4 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105">
+                <button
+                onClick={() => window.location.href = '/proyectos'}
+                className="w-full py-2 px-4 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
+              >
                   Conocer más
                 </button>
               </div>
