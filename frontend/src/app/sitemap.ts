@@ -1,8 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://backuptecno.com';
-  const baseUrl = configuredUrl.replace(/\/$/, '').replace('://www.', '://');
+  const baseUrl = 'https://www.backuptecno.com.ar';
 
   return [
     {
