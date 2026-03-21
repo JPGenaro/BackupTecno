@@ -3,21 +3,22 @@
  * Agrega aquí tus custom hooks de React
  */
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export function useLocalStorage<T>(key: string, initialValue: T) {
-  const [storedValue, setStoredValue] = useState<T>(initialValue);
+  const [storedValue, setStoredValue] = useState<T>(() => {
+    if (typeof window === "undefined") {
+      return initialValue;
+    }
 
-  useEffect(() => {
     try {
       const item = window.localStorage.getItem(key);
-      if (item) {
-        setStoredValue(JSON.parse(item));
-      }
+      return item ? (JSON.parse(item) as T) : initialValue;
     } catch (error) {
       console.error(`Error reading from localStorage:`, error);
+      return initialValue;
     }
-  }, [key]);
+  });
 
   const setValue = (value: T) => {
     try {

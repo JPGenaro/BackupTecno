@@ -1,15 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { useContact } from '@/context/ContactContext';
 
 export default function ServiciosPage() {
-  const [isVisible, setIsVisible] = useState(false);
+  const isVisible = true;
   const { openContact } = useContact();
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   const services = [
     {

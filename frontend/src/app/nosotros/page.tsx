@@ -1,15 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { useContact } from '@/context/ContactContext';
 
 export default function NosotrosPage() {
-  const [isVisible, setIsVisible] = useState(false);
+  const isVisible = true;
   const { openContact } = useContact();
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-cyan-50 to-slate-100">

@@ -15,6 +15,23 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
+const InstagramIcon = () => (
+  <svg
+    className="w-[22px] h-[22px]"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+  </svg>
+);
+
 export default function Footer() {
   const { openContact } = useContact();
   const currentYear = new Date().getFullYear();
@@ -110,6 +127,15 @@ export default function Footer() {
                 className="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-green-500 rounded-lg transition-all duration-300 transform hover:scale-110"
               >
                 <WhatsAppIcon />
+              </Link>
+              <Link
+                href="https://www.instagram.com/backuptecno/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Instagram"
+                className="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-pink-500 rounded-lg transition-all duration-300 transform hover:scale-110"
+              >
+                <InstagramIcon />
               </Link>
             </div>
             <p className="text-gray-500 text-xs mt-4">

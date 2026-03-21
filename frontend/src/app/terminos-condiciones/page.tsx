@@ -147,7 +147,7 @@ export default function TerminosCondiciones() {
               <ul className="list-disc list-inside space-y-2 text-slate-300 ml-2">
                 <li>BackupTecno no será responsable por daños indirectos, incidentales, especiales o consecuentes</li>
                 <li>Nuestra responsabilidad total se limita al monto pagado por el cliente en los 12 meses anteriores</li>
-                <li>El servicio se proporciona "tal como está" sin garantías adicionales más allá de lo codificado en el contrato</li>
+                <li>El servicio se proporciona &quot;tal como está&quot; sin garantías adicionales más allá de lo codificado en el contrato</li>
                 <li>No somos responsables por pérdida de datos o interrupciones de servicio fuera de nuestro control</li>
               </ul>
             </section>

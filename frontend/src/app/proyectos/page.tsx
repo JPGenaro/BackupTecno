@@ -1,14 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 export default function ProyectosPage() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  const isVisible = true;
 
   const proyectos = [
     {
