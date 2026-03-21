@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
 import CookieBanner from "@/components/CookieBanner";
 import { ContactProvider } from "@/context/ContactContext";
+import { LanguageProvider } from "@/context/LanguageContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -83,17 +84,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
-        <ContactProvider>
-          <Navbar />
-          <div className="flex-1">{children}</div>
-          <Footer />
-          <ContactModal />
-          <CookieBanner />
-        </ContactProvider>
+        <LanguageProvider>
+          <ContactProvider>
+            <Navbar />
+            <div className="flex-1">{children}</div>
+            <Footer />
+            <ContactModal />
+            <CookieBanner />
+          </ContactProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

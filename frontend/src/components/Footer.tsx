@@ -3,6 +3,8 @@
 import Link from "next/link";
 import Image from 'next/image';
 import { useContact } from '@/context/ContactContext';
+import { useLanguage } from '@/context/LanguageContext';
+import { t } from '@/utils/translations';
 
 const WhatsAppIcon = () => (
   <svg
@@ -34,19 +36,20 @@ const InstagramIcon = () => (
 
 export default function Footer() {
   const { openContact } = useContact();
+  const { language } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { label: "Inicio", href: "/" },
-    { label: "Sobre Nosotros", href: "/nosotros" },
-    { label: "Servicios", href: "/servicios" },
+    { label: t(language, 'footer.home'), href: "/" },
+    { label: t(language, 'footer.about'), href: "/nosotros" },
+    { label: t(language, 'footer.services'), href: "/servicios" },
     // Contact will be handled specially below to open the contact modal
   ];
 
 
   const contactInfo = [
     { icon: "📧", label: "Email", value: "backup.tecno9@gmail.com" },
-    { icon: "📍", label: "Ubicación", value: "Córdoba, Argentina" },
+    { icon: "📍", label: t(language, 'footer.location'), value: "Cordoba, Argentina" },
   ];
 
   return (
@@ -68,13 +71,13 @@ export default function Footer() {
               </h3>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed text-center md:text-left">
-              Soluciones web innovadoras y desarrollo de excelencia para transformar tu negocio digital.
+              {t(language, 'footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-blue-400">Enlaces Rápidos</h4>
+            <h4 className="text-lg font-semibold mb-4 text-blue-400">{t(language, 'footer.quickLinks')}</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -91,7 +94,7 @@ export default function Footer() {
                   onClick={openContact}
                   className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm"
                 >
-                  Contacto
+                  {t(language, 'footer.contact')}
                 </button>
               </li>
             </ul>
@@ -99,7 +102,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="text-center md:text-left">
-            <h4 className="text-lg font-semibold mb-4 text-blue-400">Contacto Rápido</h4>
+            <h4 className="text-lg font-semibold mb-4 text-blue-400">{t(language, 'footer.quickContact')}</h4>
             <ul className="space-y-3">
               {contactInfo.map((item, index) => (
                 <li key={index} className="text-sm">
@@ -117,7 +120,7 @@ export default function Footer() {
 
           {/* Social Networks */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-blue-400">Redes Sociales</h4>
+            <h4 className="text-lg font-semibold mb-4 text-blue-400">{t(language, 'footer.social')}</h4>
             <div className="flex flex-wrap gap-3 justify-center md:justify-start">
               <Link
                 href="https://wa.me/5493513021607?text=Hola%20Backup%20Tecno!%20Me%20gustaría%20obtener%20más%20información%20sobre%20sus%20servicios."
@@ -139,7 +142,7 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-gray-500 text-xs mt-4">
-              Contáctanos por WhatsApp para más información sobre nuestros servicios.
+              {t(language, 'footer.socialText')}
             </p>
           </div>
         </div>
@@ -151,7 +154,7 @@ export default function Footer() {
         <div className="flex flex-col gap-4 md:gap-0 md:flex-row justify-center md:justify-between items-center">
           <div className="text-gray-500 text-sm text-center md:text-left">
             <p>
-              © {currentYear} <span className="text-blue-400 font-semibold">Backup Tecno</span>. Todos los derechos reservados.
+              © {currentYear} <span className="text-blue-400 font-semibold">Backup Tecno</span>. {t(language, 'footer.rights')}
             </p>
           </div>
 
@@ -160,19 +163,19 @@ export default function Footer() {
               href="/politica-privacidad"
               className="text-gray-500 hover:text-blue-400 transition-colors duration-300"
             >
-              Política de Privacidad
+              {t(language, 'footer.privacy')}
             </Link>
             <Link
               href="/terminos-condiciones"
               className="text-gray-500 hover:text-blue-400 transition-colors duration-300"
             >
-              Términos de Servicio
+              {t(language, 'footer.terms')}
             </Link>
             <Link
               href="/politica-cookies"
               className="text-gray-500 hover:text-blue-400 transition-colors duration-300"
             >
-              Cookies
+              {t(language, 'footer.cookies')}
             </Link>
           </div>
         </div>
@@ -180,7 +183,7 @@ export default function Footer() {
         {/* Design Credit */}
         <div className="text-center mt-6 pt-6 border-t border-gray-800">
           <p className="text-gray-600 text-xs">
-            Diseñado y desarrollado con ❤️ por <span className="text-blue-400">Backup Tecno</span>
+            {t(language, 'footer.designed')} ❤️ {t(language, 'footer.by')} <span className="text-blue-400">Backup Tecno</span>
           </p>
         </div>
       </div>

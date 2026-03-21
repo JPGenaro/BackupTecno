@@ -1,6 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from '@/context/LanguageContext';
+import { notFoundContent } from '@/utils/sitePagesContent';
 
 export default function NotFound() {
+  const { language } = useLanguage();
+  const content = notFoundContent[language];
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-black px-4">
       <div className="text-center max-w-xl">
@@ -13,12 +20,12 @@ export default function NotFound() {
 
         {/* Título principal */}
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-          Página no encontrada
+          {content.title}
         </h2>
 
         {/* Descripción */}
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-          Parece que la página que buscas no existe. Pero no te preocupes, podemos ayudarte a encontrar lo que necesitas.
+          {content.description}
         </p>
 
         {/* Decoración visual */}
@@ -34,14 +41,14 @@ export default function NotFound() {
             href="/"
             className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
-            Volver al Inicio
+            {content.backHome}
           </Link>
         </div>
 
         {/* Mensaje adicional */}
         <div className="mt-12 p-6 bg-blue-50 dark:bg-gray-800 rounded-lg border border-blue-200 dark:border-gray-700">
           <p className="text-sm text-gray-700 dark:text-gray-300">
-            <span className="font-semibold">💡 Consejo:</span> Verifica que la URL sea correcta o usa el menú de navegación para explorar nuestro contenido.
+            <span className="font-semibold">💡 {content.tipTitle}</span> {content.tipText}
           </p>
         </div>
       </div>

@@ -3,9 +3,12 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { useContact } from '@/context/ContactContext';
+import { useLanguage } from '@/context/LanguageContext';
+import { t } from '@/utils/translations';
 
 export default function ContactModal() {
   const { isOpen, closeContact } = useContact();
+  const { language } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -59,11 +62,11 @@ export default function ContactModal() {
       } else {
         const error = await response.json();
         setSubmitStatus('error');
-        setErrorMessage(error.message || 'Error al enviar el formulario');
+        setErrorMessage(error.message || t(language, 'modal.defaultError'));
       }
     } catch (error) {
       setSubmitStatus('error');
-      setErrorMessage('Error de conexión. Por favor intenta nuevamente.');
+      setErrorMessage(t(language, 'modal.connectionError'));
       console.error('Error:', error);
     } finally {
       setIsLoading(false);
@@ -84,8 +87,8 @@ export default function ContactModal() {
               </svg>
             </div>
             <div className="flex flex-col">
-              <p className="text-lg font-semibold text-white">¡Petición enviada correctamente!</p>
-              <p className="text-sm text-white/90 mt-2">Gracias. Nos contactaremos pronto.</p>
+              <p className="text-lg font-semibold text-white">{t(language, 'modal.successTitle')}</p>
+              <p className="text-sm text-white/90 mt-2">{t(language, 'modal.successBody')}</p>
             </div>
           </div>
         </div>
@@ -100,12 +103,12 @@ export default function ContactModal() {
               width={36}
               height={36}
             />
-            <h2 className="text-2xl font-bold">Contactános</h2>
+            <h2 className="text-2xl font-bold">{t(language, 'modal.title')}</h2>
           </div>
           <button
             onClick={closeContact}
             className="text-white hover:text-gray-200 transition-colors"
-            aria-label="Cerrar"
+            aria-label={t(language, 'modal.close')}
           >
             <svg
               className="w-6 h-6"
@@ -127,7 +130,7 @@ export default function ContactModal() {
         <div className="p-6">
           {submitStatus === 'success' && (
             <div className="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-              ✓ Mensaje enviado correctamente. Nos contactaremos pronto.
+              ✓ {t(language, 'modal.sent')}
             </div>
           )}
 
@@ -141,7 +144,7 @@ export default function ContactModal() {
             {/* Nombre */}
             <div>
               <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">
-                Nombre Completo
+                {t(language, 'modal.name')}
               </label>
               <input
                 type="text"
@@ -151,7 +154,7 @@ export default function ContactModal() {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors text-gray-900 placeholder-gray-400"
-                placeholder="Tu nombre"
+                placeholder={t(language, 'modal.namePlaceholder')}
               />
             </div>
 
@@ -175,7 +178,7 @@ export default function ContactModal() {
             {/* Teléfono */}
             <div>
               <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-1">
-                Teléfono (opcional)
+                {t(language, 'modal.phone')}
               </label>
               <input
                 type="tel"
@@ -191,7 +194,7 @@ export default function ContactModal() {
             {/* Asunto */}
             <div>
               <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-1">
-                Asunto
+                {t(language, 'modal.subject')}
               </label>
               <input
                 type="text"
@@ -201,14 +204,14 @@ export default function ContactModal() {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors text-gray-900 placeholder-gray-400"
-                placeholder="¿En qué podemos ayudarte?"
+                placeholder={t(language, 'modal.subjectPlaceholder')}
               />
             </div>
 
             {/* Mensaje */}
             <div>
               <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-1">
-                Mensaje
+                {t(language, 'modal.message')}
               </label>
               <textarea
                 id="message"
@@ -218,7 +221,7 @@ export default function ContactModal() {
                 required
                 rows={5}
                 className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors resize-none text-gray-900 placeholder-gray-400"
-                placeholder="Cuéntanos sobre tu proyecto..."
+                placeholder={t(language, 'modal.messagePlaceholder')}
               />
             </div>
 
@@ -229,7 +232,7 @@ export default function ContactModal() {
                 onClick={closeContact}
                 className="flex-1 px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
               >
-                Cancelar
+                {t(language, 'modal.cancel')}
               </button>
               <button
                 type="submit"
@@ -242,17 +245,17 @@ export default function ContactModal() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                     </svg>
-                    Enviando...
+                    {t(language, 'modal.sending')}
                   </>
                 ) : (
-                  'Enviar'
+                  t(language, 'modal.send')
                 )}
               </button>
             </div>
           </form>
 
           <p className="text-xs text-gray-500 mt-4 text-center">
-            También puedes contactarnos por WhatsApp: <span className="font-semibold">+54 9 3513021607</span>
+            {t(language, 'modal.whatsappText')} <span className="font-semibold">+54 9 3513021607</span>
           </p>
         </div>
       </div>

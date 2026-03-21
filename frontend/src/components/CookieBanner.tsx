@@ -1,17 +1,91 @@
 'use client';
 
-import React from 'react';
-import { useLocalStorage } from '@/hooks/useLocalStorage';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
+import { t } from '@/utils/translations';
+
+const COOKIE_CONSENT_KEY = 'cookieConsent';
+const CONSENT_EXPIRATION_MS = 1000 * 60 * 60 * 24 * 180; // 6 months
+
+type StoredConsent =
+  | boolean
+  | {
+      accepted: boolean;
+      timestamp: number;
+    };
 
 export default function CookieBanner() {
-  const [cookieConsent, setCookieConsent] = useLocalStorage('cookieConsent', false);
+  const [cookieConsent, setCookieConsent] = useState<boolean>(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const { language } = useLanguage();
 
-  const handleClose = () => {
-    setCookieConsent(true);
+  useEffect(() => {
+    try {
+      const raw = window.localStorage.getItem(COOKIE_CONSENT_KEY);
+
+      if (raw === null) {
+        setCookieConsent(false);
+      } else if (raw === 'true' || raw === '1') {
+        // Migrate legacy values to timestamped format.
+        window.localStorage.setItem(
+          COOKIE_CONSENT_KEY,
+          JSON.stringify({ accepted: true, timestamp: Date.now() }),
+        );
+        setCookieConsent(true);
+      } else if (raw === 'false' || raw === '0') {
+        setCookieConsent(false);
+      } else {
+        const parsed = JSON.parse(raw) as StoredConsent;
+
+        if (typeof parsed === 'boolean') {
+          if (parsed) {
+            window.localStorage.setItem(
+              COOKIE_CONSENT_KEY,
+              JSON.stringify({ accepted: true, timestamp: Date.now() }),
+            );
+          }
+          setCookieConsent(parsed);
+        } else if (parsed && typeof parsed === 'object' && parsed.accepted) {
+          const hasExpired = Date.now() - parsed.timestamp >= CONSENT_EXPIRATION_MS;
+
+          if (hasExpired) {
+            window.localStorage.removeItem(COOKIE_CONSENT_KEY);
+            setCookieConsent(false);
+          } else {
+            setCookieConsent(true);
+          }
+        } else {
+          setCookieConsent(false);
+        }
+      }
+    } catch {
+      // If value is malformed, reset to a safe default.
+      window.localStorage.removeItem(COOKIE_CONSENT_KEY);
+      setCookieConsent(false);
+    } finally {
+      setIsLoaded(true);
+    }
+  }, []);
+
+  const persistConsent = (value: boolean) => {
+    setCookieConsent(value);
+
+    if (value) {
+      window.localStorage.setItem(
+        COOKIE_CONSENT_KEY,
+        JSON.stringify({ accepted: true, timestamp: Date.now() }),
+      );
+    } else {
+      window.localStorage.removeItem(COOKIE_CONSENT_KEY);
+    }
   };
 
-  if (cookieConsent) {
+  const handleClose = () => {
+    persistConsent(true);
+  };
+
+  if (!isLoaded || cookieConsent) {
     return null;
   }
 
@@ -20,25 +94,31 @@ export default function CookieBanner() {
       <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
         <div className="flex-1">
           <p className="text-sm text-gray-300">
-            Utilizamos cookies y tecnologías similares para mejorar tu experiencia de navegación. Al continuar usando nuestro sitio, aceptas nuestros{' '}
+            {t(language, 'cookiesBanner.text')}{' '}
             <Link href="/politica-privacidad" className="text-cyan-400 hover:text-cyan-300 underline">
-              política de privacidad
+              {t(language, 'cookiesBanner.privacy')}
             </Link>
             ,{' '}
             <Link href="/terminos-condiciones" className="text-cyan-400 hover:text-cyan-300 underline">
-              términos y condiciones
+              {t(language, 'cookiesBanner.terms')}
             </Link>
-            {' '}y{' '}
+            {' '}{t(language, 'cookiesBanner.and')}{' '}
             <Link href="/politica-cookies" className="text-cyan-400 hover:text-cyan-300 underline">
-              política de cookies
+              {t(language, 'cookiesBanner.cookies')}
             </Link>
             .
           </p>
         </div>
         <button
           onClick={handleClose}
+          className="flex-shrink-0 px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold transition-colors"
+        >
+          {t(language, 'cookiesBanner.accept')}
+        </button>
+        <button
+          onClick={handleClose}
           className="flex-shrink-0 text-gray-400 hover:text-white transition-colors p-2"
-          aria-label="Cerrar"
+          aria-label={t(language, 'cookiesBanner.close')}
         >
           <svg
             className="w-6 h-6"

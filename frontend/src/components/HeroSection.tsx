@@ -3,10 +3,13 @@
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useContact } from '@/context/ContactContext';
+import { useLanguage } from '@/context/LanguageContext';
+import { t } from '@/utils/translations';
 
 export default function HeroSection() {
   const router = useRouter();
   const { openContact } = useContact();
+  const { language } = useLanguage();
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#0B1829]">
       {/* Animated background elements */}
@@ -47,14 +50,13 @@ export default function HeroSection() {
             {/* Main headline */}
             <div className="space-y-5">
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight">
-                <span className="block text-cyan-50/95">Elevá tu presencia digital con</span>
+                <span className="block text-cyan-50/95">{t(language, 'hero.titleLine1')}</span>
                 <span className="mt-2 block bg-gradient-to-r from-cyan-200 via-cyan-300 to-sky-300 bg-clip-text text-transparent [text-shadow:0_0_18px_rgba(34,211,238,0.32)] tracking-wide">
                   BackupTecno
                 </span>
               </h1>
               <p className="text-lg sm:text-xl text-cyan-100 font-light leading-relaxed max-w-3xl mx-auto">
-                En <span className="font-bold text-cyan-300">BackupTecno</span> transformamos tus ideas en aplicaciones web modernas, escalables y de alto rendimiento. 
-                Nuestro equipo experto te ayudará a alcanzar tus objetivos digitales.
+                {t(language, 'hero.subtitle')}
               </p>
             </div>
 
@@ -66,7 +68,7 @@ export default function HeroSection() {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-white text-sm sm:text-base font-medium">Tecnología de última generación</span>
+                <span className="text-white text-sm sm:text-base font-medium">{t(language, 'hero.value1')}</span>
               </div>
               <div className="flex items-center gap-3 group">
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -74,7 +76,7 @@ export default function HeroSection() {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-white text-sm sm:text-base font-medium">Equipos ágiles y experimentados</span>
+                <span className="text-white text-sm sm:text-base font-medium">{t(language, 'hero.value2')}</span>
               </div>
               <div className="flex items-center gap-3 group">
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -82,7 +84,7 @@ export default function HeroSection() {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-white text-sm sm:text-base font-medium">Soporte continuo y mantenimiento</span>
+                <span className="text-white text-sm sm:text-base font-medium">{t(language, 'hero.value3')}</span>
               </div>
             </div>
 
@@ -92,12 +94,12 @@ export default function HeroSection() {
                 onClick={openContact}
                 className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] font-bold text-lg rounded-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl hover:shadow-cyan-500/50"
               >
-                Comenzar Proyecto
+                {t(language, 'hero.startProject')}
               </button>
               <button 
                 onClick={() => router.push('/proyectos')}
                 className="px-8 py-4 border-2 border-cyan-400 text-cyan-300 font-bold text-lg rounded-lg hover:bg-cyan-400/10 transition-all duration-300 transform hover:scale-105 hover:text-cyan-200">
-                Ver Portafolio
+                {t(language, 'hero.viewPortfolio')}
               </button>
             </div>
           </div>

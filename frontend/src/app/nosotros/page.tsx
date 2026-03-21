@@ -1,10 +1,14 @@
 'use client';
 
 import { useContact } from '@/context/ContactContext';
+import { useLanguage } from '@/context/LanguageContext';
+import { aboutPageContent } from '@/utils/sitePagesContent';
 
 export default function NosotrosPage() {
   const isVisible = true;
   const { openContact } = useContact();
+  const { language } = useLanguage();
+  const content = aboutPageContent[language];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-cyan-50 to-slate-100">
@@ -27,10 +31,10 @@ export default function NosotrosPage() {
           }`}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-cyan-200 animate-fade-in tracking-tight">
-            Nosotros
+            {content.heroTitle}
           </h1>
           <p className="text-xl md:text-2xl text-cyan-100 max-w-3xl animate-slide-up">
-            Creamos experiencias digitales excepcionales con código de excelencia
+            {content.heroSubtitle}
           </p>
         </div>
         
@@ -51,31 +55,22 @@ export default function NosotrosPage() {
         >
           <div className="flex items-center gap-4 mb-8">
             <div className="w-1 h-12 bg-gradient-to-b from-[#0B1829] to-cyan-500 rounded-full animate-pulse"></div>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0B1829]">Nuestra Historia</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0B1829]">{content.historyTitle}</h2>
           </div>
           
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-cyan-100 hover:border-cyan-300">
             <div className="prose prose-lg max-w-none">
               <p className="text-slate-700 leading-relaxed mb-6 text-lg">
                 <span className="text-6xl font-bold text-cyan-600 float-left mr-4 mt-2 leading-none">B</span>
-                ackupTecno nació en 2025 de la pasión de un grupo de desarrolladores por crear soluciones 
-                web innovadoras y de alta calidad. Fundada por programadores que soñaban con transformar ideas 
-                en experiencias digitales excepcionales, nuestra empresa surgió en un momento donde la presencia 
-                digital se volvía fundamental para el éxito empresarial.
+                {content.historyParagraphs[0]}
               </p>
               
               <p className="text-slate-700 leading-relaxed mb-6 text-lg">
-                Desde nuestros inicios, hemos entendido que cada proyecto web es único y requiere un enfoque 
-                personalizado. No solo escribimos código, creamos soluciones que impulsan negocios, conectan 
-                personas y materializan visiones. Nuestra comprensión profunda de las tecnologías modernas y 
-                las mejores prácticas de desarrollo nos permite entregar productos digitales robustos y escalables.
+                {content.historyParagraphs[1]}
               </p>
               
               <p className="text-slate-700 leading-relaxed text-lg">
-                Hoy, BackupTecno es sinónimo de desarrollo web. Hemos crecido junto a 
-                nuestros clientes, evolucionando con las últimas tecnologías y frameworks para anticiparnos a las 
-                tendencias del mercado. Cada proyecto nos ha fortalecido, cada línea de código nos ha inspirado 
-                a seguir mejorando nuestro craft.
+                {content.historyParagraphs[2]}
               </p>
             </div>
           </div>
@@ -102,17 +97,14 @@ export default function NosotrosPage() {
                   </svg>
                 </div>
                 
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-cyan-100">Nuestra Misión</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-cyan-100">{content.missionTitle}</h2>
                 
                 <p className="text-cyan-50 leading-relaxed text-lg mb-4">
-                  Desarrollar aplicaciones web excepcionales que transformen ideas en realidades digitales 
-                  impactantes, utilizando las tecnologías más modernas y las mejores prácticas de programación.
+                  {content.missionParagraphs[0]}
                 </p>
                 
                 <p className="text-cyan-50 leading-relaxed text-lg">
-                  Nos comprometemos a entregar código limpio, escalable y mantenible, respaldados por 
-                  un equipo de desarrolladores apasionados que entienden que detrás de cada sitio web hay 
-                  negocios creciendo, usuarios conectándose y sueños haciéndose realidad.
+                  {content.missionParagraphs[1]}
                 </p>
               </div>
             </div>
@@ -136,18 +128,14 @@ export default function NosotrosPage() {
                   </svg>
                 </div>
                 
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Nuestra Visión</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">{content.visionTitle}</h2>
                 
                 <p className="text-cyan-50 leading-relaxed text-lg mb-4">
-                  Ser reconocidos como referentes en desarrollo web en América Latina, destacándonos 
-                  por nuestra maestría técnica, innovación constante y la capacidad de convertir proyectos 
-                  complejos en soluciones elegantes y funcionales.
+                  {content.visionParagraphs[0]}
                 </p>
                 
                 <p className="text-cyan-50 leading-relaxed text-lg">
-                  Aspiramos a crear un ecosistema donde la programación de excelencia y el talento creativo 
-                  se fusionen para construir el futuro digital, transformando desafíos técnicos en oportunidades 
-                  de crecimiento y estableciendo relaciones duraderas basadas en la calidad del código y los resultados medibles.
+                  {content.visionParagraphs[1]}
                 </p>
               </div>
             </div>
@@ -163,9 +151,9 @@ export default function NosotrosPage() {
           }`}
         >
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0B1829] mb-4">Nuestro Equipo</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0B1829] mb-4">{content.teamTitle}</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              El corazón de BackupTecno late con el talento, la pasión y el compromiso de personas excepcionales
+              {content.teamSubtitle}
             </p>
           </div>
 
@@ -177,11 +165,9 @@ export default function NosotrosPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">Desarrolladores Apasionados</h3>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">{content.values[0].title}</h3>
               <p className="text-slate-600 leading-relaxed">
-                Nuestro equipo está conformado por programadores que viven y respiran código. Cada desarrollador 
-                aporta creatividad, pensamiento crítico y una pasión genuina por resolver problemas complejos 
-                con soluciones elegantes. Cultivamos un ambiente de aprendizaje continuo y colaboración.
+                {content.values[0].description}
               </p>
             </div>
 
@@ -192,11 +178,9 @@ export default function NosotrosPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">Stack Tecnológico Moderno</h3>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">{content.values[1].title}</h3>
               <p className="text-slate-600 leading-relaxed">
-                Trabajamos con las últimas tecnologías del ecosistema web: React, Next.js, TypeScript, 
-                Node.js, y más. Nos mantenemos actualizados con las tendencias del desarrollo, adoptando 
-                nuevas herramientas y frameworks cuando aportan valor real a nuestros proyectos.
+                {content.values[1].description}
               </p>
             </div>
 
@@ -207,11 +191,9 @@ export default function NosotrosPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">Código de Calidad</h3>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">{content.values[2].title}</h3>
               <p className="text-slate-600 leading-relaxed">
-                Nos enorgullece escribir código limpio, bien documentado y mantenible. Aplicamos patrones de 
-                diseño, principios SOLID, y realizamos code reviews exhaustivos. Cada proyecto se construye 
-                pensando en su escalabilidad, performance y facilidad de mantenimiento a largo plazo.
+                {content.values[2].description}
               </p>
             </div>
           </div>
@@ -238,16 +220,16 @@ export default function NosotrosPage() {
 
             <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-cyan-50">
-                ¿Tienes un proyecto en mente?
+                {content.ctaTitle}
               </h2>
               <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
-                Transformemos tu idea en una aplicación web excepcional. Hablemos de código.
+                {content.ctaSubtitle}
               </p>
               <button
                 onClick={openContact}
                 className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] px-10 py-4 rounded-full font-bold text-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl"
               >
-                Contáctanos
+                {content.ctaButton}
               </button>
             </div>
           </div>

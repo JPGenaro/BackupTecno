@@ -1,79 +1,15 @@
 'use client';
 
 import { useContact } from '@/context/ContactContext';
+import { useLanguage } from '@/context/LanguageContext';
+import { servicesPageContent } from '@/utils/sitePagesContent';
 
 export default function ServiciosPage() {
   const isVisible = true;
   const { openContact } = useContact();
-
-  const services = [
-    {
-      title: "Desarrollo Web Completo",
-      description: "Creamos aplicaciones web modernas, rápidas y escalables utilizando React, Next.js, TypeScript y las últimas tecnologías del mercado.",
-      icon: "🚀",
-      features: [
-        "Aplicaciones web responsivas",
-        "Progressive Web Apps (PWA)",
-        "E-commerce personalizados",
-        "Plataformas SaaS"
-      ]
-    },
-    {
-      title: "Diseño UI/UX",
-      description: "Diseñamos interfaces intuitivas y atractivas que proporcionan la mejor experiencia de usuario posible en todas las plataformas.",
-      icon: "🎨",
-      features: [
-        "Diseño de interfaces modernas",
-        "Prototipado y wireframing",
-        "User research y testing",
-        "Diseño responsivo"
-      ]
-    },
-    {
-      title: "Consultoría Tecnológica",
-      description: "Asesoramiento estratégico en arquitectura de software, elección de tecnologías y optimización de procesos de desarrollo.",
-      icon: "💡",
-      features: [
-        "Auditoría de código",
-        "Selección de stack tecnológico",
-        "Optimización de rendimiento",
-        "Mentoring técnico"
-      ]
-    },
-    {
-      title: "Mantenimiento y Soporte",
-      description: "Mantenimiento continuo de tus aplicaciones con actualizaciones, corrección de bugs y mejoras de seguridad.",
-      icon: "🔧",
-      features: [
-        "Actualizaciones de seguridad",
-        "Corrección de bugs",
-        "Optimización de base de datos",
-        "Monitoreo 24/7"
-      ]
-    },
-    {
-      title: "Integración de APIs",
-      description: "Integramos sistemas externos, APIs y servicios de terceros en tu aplicación de forma segura y eficiente.",
-      icon: "🔗",
-      features: [
-        "Integración de pagos",
-        "APIs de redes sociales",
-        "Servicios en la nube",
-        "Webhooks y automatización"
-      ]
-    },
-    {
-      title: "Optimización SEO y Performance",
-      description: "Optimizamos tu sitio web para mejor posicionamiento en buscadores y máximo rendimiento de usuario.",
-      icon: "⚡",
-      features: [
-        "SEO técnico",
-        "Optimización de velocidad",
-        "Core Web Vitals",
-        "Análisis y reportes"
-      ]
-    }
-  ];
+  const { language } = useLanguage();
+  const content = servicesPageContent[language];
+  const services = content.services;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-cyan-50 to-slate-100">
@@ -96,10 +32,10 @@ export default function ServiciosPage() {
           }`}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-cyan-200 animate-fade-in tracking-tight">
-            Nuestros Servicios
+            {content.heroTitle}
           </h1>
           <p className="text-xl md:text-2xl text-cyan-100 max-w-3xl animate-slide-up">
-            Soluciones web completas y personalizadas para tu negocio
+            {content.heroSubtitle}
           </p>
         </div>
         
@@ -158,7 +94,7 @@ export default function ServiciosPage() {
                   onClick={() => window.location.href = '/proyectos'}
                   className="w-full py-2 px-4 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  Conocer más
+                  {content.learnMore}
                 </button>
               </div>
             </div>
@@ -170,20 +106,15 @@ export default function ServiciosPage() {
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0B1829] mb-4">
-            Nuestro Proceso
+            {content.processTitle}
           </h2>
           <p className="text-lg text-slate-600">
-            Un enfoque metodológico y transparente para asegurar tu éxito
+            {content.processSubtitle}
           </p>
         </div>
 
         <div className="grid md:grid-cols-4 gap-6">
-          {[
-            { number: "01", title: "Discovery", description: "Entendemos tus necesidades y objetivos" },
-            { number: "02", title: "Planificación", description: "Diseñamos la estrategia y arquitectura" },
-            { number: "03", title: "Desarrollo", description: "Construimos con código de excelencia" },
-            { number: "04", title: "Lanzamiento", description: "Deployment y soporte continuo" }
-          ].map((step, index) => (
+          {content.steps.map((step, index) => (
             <div
               key={index}
               className="relative"
@@ -218,16 +149,16 @@ export default function ServiciosPage() {
           
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              ¿Listo para llevar tu proyecto al siguiente nivel?
+              {content.ctaTitle}
             </h2>
             <p className="text-cyan-100 text-lg mb-8 max-w-2xl mx-auto">
-              Nuestro equipo de expertos está aquí para ayudarte a alcanzar tus objetivos
+              {content.ctaSubtitle}
             </p>
             <button
               onClick={openContact}
               className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#0B1829] px-10 py-4 rounded-full font-bold text-lg hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl"
             >
-              Solicitar Consulta Gratuita
+              {content.ctaButton}
             </button>
           </div>
         </div>

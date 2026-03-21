@@ -1,42 +1,14 @@
 'use client';
 
 import Image from 'next/image';
+import { useLanguage } from '@/context/LanguageContext';
+import { projectsPageContent } from '@/utils/sitePagesContent';
 
 export default function ProyectosPage() {
   const isVisible = true;
-
-  const proyectos = [
-    {
-      id: 1,
-      title: "Penicord",
-      description: "Plataforma moderna de presentación y portafolio con arquitectura escalable. Sitio web profesional que showcasea servicios y proyectos usando componentes React reutilizables, animaciones fluidas y un diseño completamente responsivo.",
-      imagen: "/penicord_fondo.webp",
-      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Storybook"],
-      link: "https://penicord.vercel.app/",
-      github: "https://github.com/JPGenaro/Penicord",
-      color: "from-cyan-500 to-blue-500"
-    },
-    {
-      id: 2,
-      title: "Sweet Life - Residencia para Adultos",
-      description: "Plataforma web de marketing para residencia de adultos mayores con diseño elegante e intuitivo. Incluye galería visual, descripción de servicios, información de contacto, mapa de ubicación y optimización SEO completa para visibilidad en buscadores.",
-      imagen: "/sweet_life_fondo.webp",
-      technologies: ["Next.js", "React", "Tailwind CSS", "Google Maps", "SEO Optimizado"],
-      link: "https://www.sweetlife.com.ar/",
-      github: "https://github.com/JPGenaro/Residencial-para-Adultos",
-      color: "from-green-500 to-cyan-500"
-    },
-    {
-      id: 3,
-      title: "CarShop - Tienda de Repuestos",
-      description: "Plataforma e-commerce full-stack para una tienda especializada en repuestos automotrices. Incluye catálogo productos con búsqueda inteligente, filtros avanzados, fichas técnicas detalladas, carrito de compras, autenticación de usuarios y administración completa de inventario con panel de control.",
-      imagen: "/carshop_fondo.webp",
-      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Django", "Django REST Framework", "PostgreSQL"],
-      link: "https://car-shop-dusky.vercel.app/",
-      github: "https://github.com/JPGenaro/CarShop",
-      color: "from-orange-500 to-red-500"
-    }
-  ];
+  const { language } = useLanguage();
+  const content = projectsPageContent[language];
+  const proyectos = content.projects;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-cyan-50 to-slate-100">
@@ -59,10 +31,10 @@ export default function ProyectosPage() {
           }`}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-cyan-200 animate-fade-in tracking-tight">
-            Nuestros Proyectos
+            {content.heroTitle}
           </h1>
           <p className="text-xl md:text-2xl text-cyan-100 max-w-3xl animate-slide-up">
-            Explora algunos de los proyectos más destacados que hemos desarrollado para nuestros clientes
+            {content.heroSubtitle}
           </p>
         </div>
         
@@ -92,7 +64,7 @@ export default function ProyectosPage() {
               >
                 <div className="relative h-64 overflow-hidden rounded-2xl shadow-lg mb-4 bg-slate-200">
                   <Image
-                    src={proyecto.imagen}
+                    src={proyecto.image}
                     alt={proyecto.title}
                     width={600}
                     height={400}
@@ -104,7 +76,7 @@ export default function ProyectosPage() {
                   
                   {/* Badge flotante */}
                   <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-[#0B1829] shadow-lg">
-                    Proyecto
+                    {content.projectBadge}
                   </div>
                 </div>
               </a>
@@ -121,7 +93,7 @@ export default function ProyectosPage() {
 
                 {/* Technologies Tags */}
                 <div className="space-y-3">
-                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Stack Tecnológico</p>
+                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">{content.stackLabel}</p>
                   <div className="flex flex-wrap gap-2">
                     {proyecto.technologies.map((tech) => (
                       <span
@@ -145,7 +117,7 @@ export default function ProyectosPage() {
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
-                    Ver Proyecto
+                    {content.viewProject}
                   </a>
                 </div>
               </div>
